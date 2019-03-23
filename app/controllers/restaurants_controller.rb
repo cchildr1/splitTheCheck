@@ -68,7 +68,12 @@ class RestaurantsController < ApplicationController
   end
 
   def search
-
+    if params[:search].blank?
+      redirect_to(restaurants_index_path, notice: "Empty Search Field") and return
+    else
+      @parameter = params[:search].downcase
+      @results = Restaurant.all.where("lower(name) LIKE :search OR lower(state) LIKE :search OR lower(city) LIKE :search OR lower(zipcode) LIKE :search", search: @parameter)
+    end
   end
 
   private

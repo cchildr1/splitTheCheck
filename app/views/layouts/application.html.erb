@@ -11,6 +11,9 @@
 
   <body>
   <header>
+
+    <h1>Split the Check!</h1>
+    <p>Does your favorite restaurant have consumer friendly practices by splitting the check? Vote here!</p>
     <%= form_tag(search_page_path, method: :get, class: 'navbar-form navbar-left') do %>
       <div class="input-group">
         <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
@@ -18,9 +21,7 @@
           <%= button_tag "Search", class: 'btn btn-info', name: nil %>
         </div>
       </div>
-      <% end %>
-    <h1>Split the Check!</h1>
-    <p>Does your favorite restaurant have consumer friendly practices by splitting the check? Vote here!</p>
+    <% end %>
   </header>
     <%= yield %>
   </body>
