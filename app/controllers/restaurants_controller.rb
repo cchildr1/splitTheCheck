@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_restaurant, only: [:show, :edit, :update]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -50,6 +50,8 @@ class RestaurantsController < ApplicationController
       end
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

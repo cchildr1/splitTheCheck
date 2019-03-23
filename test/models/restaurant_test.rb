@@ -77,4 +77,16 @@ class RestaurantTest < ActiveSupport::TestCase
     assert_equal [:downvotes], @test.errors.keys
   end
 
+  test "upvote increments upvotes by 1" do
+    value = @test.upvotes
+    @test.upvote
+    assert_equal @test.upvotes, value + 1
+  end
+
+  test "downvote increments downvotes by 1" do
+    value = @test.downvotes
+    @test.downvote
+    assert_equal @test.downvotes, value + 1
+  end
+
 end
