@@ -2,16 +2,16 @@
 
 <h1>Restaurants</h1>
 
+<%= link_to 'New Restaurant', new_restaurant_path %>
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Streetaddress</th>
+      <th>Street Address</th>
       <th>City</th>
       <th>State</th>
-      <th>Zipcode</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
+      <th>Zip Code</th>
+      <th>Splits?</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,16 +19,19 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= restaurant.name %></td>
+        <td><%= link_to restaurant.name, restaurant %></td>
         <td><%= restaurant.streetaddress %></td>
         <td><%= restaurant.city %></td>
         <td><%= restaurant.state %></td>
         <td><%= restaurant.zipcode %></td>
-        <td><%= restaurant.upvotes %></td>
-        <td><%= restaurant.downvotes %></td>
-        <td><%= link_to 'Show', restaurant %></td>
+        <% if (restaurant.upvotes > restaurant.downvotes) %>
+          <td><%= image_tag("thumbsup.png", size: 16) %></td>
+        <% elsif(restaurant.downvotes > restaurant.upvotes) %>
+          <td><%= image_tag("thumbsdown.png", size: 16) %></td>
+        <% else %>
+          <td>¯\_(ツ)_/¯</td>
+        <% end %>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+
