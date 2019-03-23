@@ -25,14 +25,14 @@
   <%= @restaurant.zipcode %>
 </p>
 
-<p>
-  <strong>Upvotes:</strong>
-  <%= @restaurant.upvotes %>
-</p>
-
-<p>
-  <strong>Downvotes:</strong>
-  <%= @restaurant.downvotes %>
+<p class="splits">
+  <% if (@restaurant.upvotes > @restaurant.downvotes) %>
+    <%= image_tag("thumbsup.png", size: 64) %>
+  <% elsif (@restaurant.downvotes > @restaurant.upvotes) %>
+    <%= image_tag("thumbsdown.png", size: 64) %>
+  <% else %>
+    ¯\_(ツ)_/¯
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
