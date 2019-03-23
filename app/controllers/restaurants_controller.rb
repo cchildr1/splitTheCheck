@@ -25,6 +25,8 @@ class RestaurantsController < ApplicationController
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.upvotes = 0
+    @restaurant.downvotes = 0
 
     respond_to do |format|
       if @restaurant.save
@@ -56,6 +58,17 @@ class RestaurantsController < ApplicationController
     @restaurant.upvote
     @restaurant.save
     redirect_to @restaurant, notice: "#{@restaurant.name} upvoted"
+  end
+
+  def downvote
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.downvote
+    @restaurant.save
+    redirect_to @restaurant, notice: "#{@restaurant.name} downvoted"
+  end
+
+  def search
+
   end
 
   private
