@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 require 'csv'
-
-csv_text = File.read('/lib/data/data.csv')
+Restaurant.delete_all
+csv_text = File.read(Rails.root.join('lib', 'data', 'data.csv'))
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
   Restaurant.create!(row.to_hash)
