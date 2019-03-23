@@ -25,6 +25,11 @@
   <%= @restaurant.zipcode %>
 </p>
 
+<p>
+  <strong>Upvotes:</strong>
+  <%= @restaurant.upvotes %>
+</p>
+
 <p class="splits">
   <% if (@restaurant.upvotes > @restaurant.downvotes) %>
     <%= image_tag("thumbsup.png", size: 64) %>
@@ -34,6 +39,10 @@
     ¯\_(ツ)_/¯
   <% end %>
 </p>
+
+<div class="votes">
+  <%= link_to 'Upvote', restaurants_upvote_path(@restaurant) %>
+</div>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

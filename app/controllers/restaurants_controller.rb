@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update]
+  before_action :set_restaurant, only: [:show, :edit, :update, :upvote]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -51,7 +51,12 @@ class RestaurantsController < ApplicationController
     end
   end
 
-
+  def upvote
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.upvote
+    @restaurant.save
+    redirect_to @restaurant, notice: "#{@restaurant.name} upvoted"
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
