@@ -38,4 +38,13 @@ class RestaurantsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to restaurant_url(@restaurant)
   end
 
+  test "empty search redirects to index with message" do
+    get search_page_url, params: { search: nil}
+    assert_redirected_to '/'
+  end
+
+  test "search redirects to seach page with parameters" do
+    get search_page_url, params: { search: "Test"}
+    assert_response :success
+  end
 end

@@ -10,10 +10,10 @@ one:
   downvotes: 1
 
 two:
-  name: MyString
-  streetaddress: MyString
-  city: MyString
-  state: MyString
-  zipcode: MyString
-  upvotes: 1
+  name: Test the testy restaurant
+  streetaddress: 123 Street
+  city: City
+  state: GA
+  zipcode: 11123
+  upvotes: 0
   downvotes: 1
