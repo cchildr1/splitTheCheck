@@ -71,4 +71,15 @@ class RestaurantsTest < ApplicationSystemTestCase
     assert page.has_css?('.splitst')
   end
 
+  test "downvoted restaurant changes from shrug to thumbs down" do
+    restaurant = restaurants(:splits)
+    visit restaurants_url
+    click_on restaurant.name.to_s, match: :first
+    click_on "Downvote"
+    assert_text restaurant.name.to_s + " downvoted"
+    assert_text "¯\\_(ツ)_/¯"
+    click_on "Downvote"
+    assert page.has_css?('.splitsf')
+  end
+
 end
