@@ -5,7 +5,7 @@ one:
   streetaddress: MyString
   city: MyString
   state: MyString
-  zipcode: MyString
+  zipcode: 11111
   upvotes: 1
   downvotes: 1
 
@@ -15,5 +15,23 @@ two:
   city: City
   state: GA
   zipcode: 11123
+  upvotes: 0
+  downvotes: 1
+
+splits:
+  name: This Restaurant splits the check
+  streetaddress: 123 Split Street
+  city: Splitsville
+  state: GA
+  zipcode: 12345
+  upvotes: 3
+  downvotes: 0
+
+reform:
+  name: This restaurant doesn't split, but will
+  streetaddress: 99 Reform drive
+  city: Splitsville
+  state: GA
+  zipcode: 12345
   upvotes: 0
   downvotes: 1
