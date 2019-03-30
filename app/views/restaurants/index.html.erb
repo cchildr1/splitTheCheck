@@ -1,40 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Restaurants</h1>
-
-<%= link_to 'New Restaurant', new_restaurant_path %>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Street Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip Code</th>
-      <th>Splits?</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
+<h1 class="text-center">Restaurants</h1>
+<div class="row">
+  <div class="col-md-3"></div>
+  <%= button_to 'New Restaurant', new_restaurant_path %>
+</div>
+<div class="row">
+<div class="col-md-2"></div>
+  <table class="col-md-8">
+    <thead>
       <tr>
-        <td><%= link_to restaurant.name, restaurant %></td>
-        <td><%= restaurant.streetaddress %></td>
-        <td><%= restaurant.city %></td>
-        <td><%= restaurant.state %></td>
-        <td><%= restaurant.zipcode %></td>
-        <% if (restaurant.upvotes > restaurant.downvotes) %>
-          <td><%= image_tag("thumbsup.png", size: 16) %></td>
-        <% elsif(restaurant.downvotes > restaurant.upvotes) %>
-          <td><%= image_tag("thumbsdown.png", size: 16) %></td>
-        <% else %>
-          <td>¯\_(ツ)_/¯</td>
-        <% end %>
+        <th>Name</th>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Splits?</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td><%= link_to restaurant.name, restaurant %></td>
+          <td><%= restaurant.streetaddress %></td>
+          <td><%= restaurant.city %></td>
+          <td><%= restaurant.state %></td>
+          <td><%= restaurant.zipcode %></td>
+          <% if (restaurant.upvotes > restaurant.downvotes) %>
+            <td><%= image_tag("thumbsup.png", size: 16) %></td>
+          <% elsif(restaurant.downvotes > restaurant.upvotes) %>
+            <td><%= image_tag("thumbsdown.png", size: 16) %></td>
+          <% else %>
+            <td>¯\_(ツ)_/¯</td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="col-md-2"></div>
+</div>
 <br>
 
 
