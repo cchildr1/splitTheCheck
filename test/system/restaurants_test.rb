@@ -82,4 +82,19 @@ class RestaurantsTest < ApplicationSystemTestCase
     assert page.has_css?('.splitsf')
   end
 
+  test "empty search redirects to main page with message" do
+    visit restaurants_url
+    click_on "Search"
+    assert_text "Empty Search Field"
+  end
+
+  test "searching pulls the correct result" do
+    restaurant = restaurants(:two)
+    visit restaurants_url
+    fill_in "Search", with: restaurant.name.to_s
+    click_on "Search"
+    assert_text restaurant.streetaddress
+    assert_no_text restaurants(:one).name.to_s
+  end
+
 end
