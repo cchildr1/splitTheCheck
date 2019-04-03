@@ -13,3 +13,10 @@ csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
   Restaurant.create!(row.to_hash)
 end
+
+User.delete_all
+csv_text = File.read(Rails.root.join('lib', 'data', 'users.csv'))
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  User.create({email: row.to_hash[:email], password: row.to_hash[:password], password_confirmation: row.to_hash[:password]})
+end
