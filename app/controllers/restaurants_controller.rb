@@ -11,6 +11,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @upvotes = Restaurant.find(params[:id]).join(:Upvotes).join(:Users)
   end
 
   # GET /restaurants/new

@@ -18,5 +18,14 @@ User.delete_all
 csv_text = File.read(Rails.root.join('lib', 'data', 'users.csv'))
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
-  User.create({email: row.to_hash[:email], password: row.to_hash[:password], password_confirmation: row.to_hash[:password]})
+  user = User.new
+  user.email = row.to_hash["email"]
+  user.password = 'valid_password'
+  user.save!
 end
+
+Upvote.delete_all
+300.times do
+  Upvote.create(value: 1, restaurant_id: rand(Restaurant.all.size), user_id: rand(User.all.size))
+end
+
