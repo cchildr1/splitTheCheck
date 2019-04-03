@@ -36,12 +36,14 @@
       <% end %>
     </p>
 
-    <div class="votes">
-      <%= link_to 'Upvote', restaurants_upvote_path(@restaurant) %>
-      <%= link_to 'Downvote', restaurants_downvote_path(@restaurant) %>
-    </div>
+    <% if user_signed_in? %>
+        <div class="votes">
+          <%= link_to 'Upvote', restaurants_upvote_path(@restaurant) %> |
+          <%= link_to 'Downvote', restaurants_downvote_path(@restaurant) %>
+        </div>
 
-    <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+        <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+    <% end %>
     <%= link_to 'Back', restaurants_path %>
   </div>
   <div class="col-md-2"></div>
