@@ -28,13 +28,13 @@
           <td><%= restaurant.city %></td>
           <td><%= restaurant.state %></td>
           <td><%= restaurant.zipcode %></td>
-          <% if (restaurant.upvotes > restaurant.downvotes) %>
-            <td><%= image_tag("thumbsup.png", size: 16) %></td>
-          <% elsif(restaurant.downvotes > restaurant.upvotes) %>
-            <td><%= image_tag("thumbsdown.png", size: 16) %></td>
-          <% else %>
-            <td>¯\_(ツ)_/¯</td>
-          <% end %>
+          <%# if (restaurant.upvotes > restaurant.downvotes) %>
+<!--            <td><%#= image_tag("thumbsup.png", size: 16) %></td>-->
+          <%# elsif(restaurant.downvotes > restaurant.upvotes) %>
+<!--            <td><%#= image_tag("thumbsdown.png", size: 16) %></td>-->
+          <%# else %>
+<!--            <td>¯\_(ツ)_/¯</td>-->
+          <%# end %>
         </tr>
       <% end %>
     </tbody>

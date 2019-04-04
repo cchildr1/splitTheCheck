@@ -26,19 +26,50 @@
       <%= @restaurant.zipcode %>
     </p>
 
-    <p class="splits">
-      <% if (@restaurant.upvotes > @restaurant.downvotes) %>
-        <%= image_tag("thumbsup.png", size: 64, class: "splitst") %>
-      <% elsif (@restaurant.downvotes > @restaurant.upvotes) %>
-        <%= image_tag("thumbsdown.png", size: 64, class: "splitsf") %>
+    <p>
+      <strong>Splits:</strong>
+      <% if @value > 0 %>
+        <%= image_tag("thumbsup.png", size: 64) %>
+      <% elsif @value < 0 %>
+        <%= image_tag("thumbsdown.png", size: 64) %>
       <% else %>
         ¯\_(ツ)_/¯
       <% end %>
     </p>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <table class="col-md-8">
+        <thead>
+        <tr>
+          <th>User</th>
+          <th>Created At:</th>
+          <th>Splits?</th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+        <% @votes.each do |vote| %>
+          <tr>
+            <td><%= vote.user.email %></td>
+            <td><%= vote.created_at %></td>
+            <td><% if vote.value == 1 %>
+                  <%= image_tag("thumbsup.png", size: 16) %>
+                <% elsif vote.value == -1 %>
+                  <%= image_tag("thumbsdown.png", size: 16) %>
+                <% end %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="col-md-2"></div>
+    </div>
+
 
     <% if user_signed_in? %>
         <div class="votes">
-          <%= link_to 'Upvote', restaurants_upvote_path(@restaurant) %> |
+          <%= link_to 'Vote', restaurants_upvote_path(@restaurant) %> |
           <%= link_to 'Downvote', restaurants_downvote_path(@restaurant) %>
         </div>
 

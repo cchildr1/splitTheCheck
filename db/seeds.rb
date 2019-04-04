@@ -24,8 +24,19 @@ csv.each do |row|
   user.save!
 end
 
-Upvote.delete_all
-300.times do
-  Upvote.create(value: 1, restaurant_id: rand(Restaurant.all.size), user_id: rand(User.all.size))
+def randomvalue
+  value = rand(100)
+  if value >= 50
+    return 1
+  else
+    return -1
+  end
 end
+
+Vote.delete_all
+500.times do
+  Vote.create(value: randomvalue, restaurant_id: rand(Restaurant.all.size), user_id: rand(User.all.size))
+end
+
+
 

@@ -5,8 +5,7 @@ class Restaurant < ApplicationRecord
   validates :state, presence: true
   validates :zipcode, presence: true, format: { with: /\d{5}/, message: "Zip Code must contain 5 numbers" }
 
-  has_many :upvotes
-  has_many :users, through: :upvotes
+  has_many :votes
 
   def upvote
 

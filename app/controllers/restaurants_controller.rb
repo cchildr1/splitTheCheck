@@ -6,12 +6,18 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
+
   end
 
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    @upvotes = Restaurant.find(params[:id]).join(:Upvotes).join(:Users)
+    @votes = Restaurant.find(params[:id]).votes.order(:created_at)
+    @value = 0
+    @votes.each do |vote|
+      @value += vote.value
+    end
+
   end
 
   # GET /restaurants/new
@@ -27,8 +33,6 @@ class RestaurantsController < ApplicationController
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.upvotes = 0
-    @restaurant.downvotes = 0
 
     respond_to do |format|
       if @restaurant.save

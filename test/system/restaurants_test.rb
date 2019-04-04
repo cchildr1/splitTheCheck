@@ -64,10 +64,10 @@ class RestaurantsTest < ApplicationSystemTestCase
     restaurant = restaurants(:reform)
     visit restaurants_url
     click_on restaurant.name.to_s, match: :first
-    click_on "Upvote"
+    click_on "Vote"
     assert_text restaurant.name.to_s + " upvoted"
     assert_text "¯\\_(ツ)_/¯"
-    click_on "Upvote"
+    click_on "Vote"
     assert page.has_css?('.splitst')
   end
 
