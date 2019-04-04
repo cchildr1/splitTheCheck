@@ -20,9 +20,9 @@
       <td><%= restaurant.city %></td>
       <td><%= restaurant.state %></td>
       <td><%= restaurant.zipcode %></td>
-      <% if (restaurant.upvotes > restaurant.downvotes) %>
+      <% if (restaurant.sum_votes > 0) %>
         <td><%= image_tag("thumbsup.png", size: 16) %></td>
-      <% elsif(restaurant.downvotes > restaurant.upvotes) %>
+      <% elsif(restaurant.sum_votes < 0) %>
         <td><%= image_tag("thumbsdown.png", size: 16) %></td>
       <% else %>
         <td>¯\_(ツ)_/¯</td>

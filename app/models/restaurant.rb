@@ -7,11 +7,12 @@ class Restaurant < ApplicationRecord
 
   has_many :votes
 
-  def upvote
-
-  end
-
-  def downvote
-    self.increment(:downvotes, 1)
+  def sum_votes
+    votes = self.votes
+    value = 0
+    votes.each do |vote|
+      value += vote.value
+    end
+    return value
   end
 end

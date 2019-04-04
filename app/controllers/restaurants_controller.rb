@@ -12,12 +12,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    @votes = Restaurant.find(params[:id]).votes.order(:created_at)
-    @value = 0
-    @votes.each do |vote|
-      @value += vote.value
-    end
-
+    restaurant = Restaurant.find(params[:id])
+    @votes = restaurant.votes.order(:created_at)
+    @value = restaurant.sum_votes
   end
 
   # GET /restaurants/new
@@ -60,16 +57,12 @@ class RestaurantsController < ApplicationController
   end
 
   def upvote
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant.upvote
-    @restaurant.save
+    Vote.create(value: 1, restaurant_id: params[:id], user_id: current_user.id.to_int)
     redirect_to @restaurant, notice: "#{@restaurant.name} upvoted"
   end
 
   def downvote
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant.downvote
-    @restaurant.save
+    Vote.create(value: -1, restaurant_id: params[:id], user_id: current_user.id.to_int)
     redirect_to @restaurant, notice: "#{@restaurant.name} downvoted"
   end
 
