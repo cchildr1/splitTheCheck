@@ -6,8 +6,6 @@ one:
   city: MyString
   state: MyString
   zipcode: 11111
-  upvotes: 1
-  downvotes: 1
 
 two:
   name: Test the testy restaurant
@@ -15,8 +13,6 @@ two:
   city: City
   state: GA
   zipcode: 11123
-  upvotes: 0
-  downvotes: 1
 
 splits:
   name: This Restaurant splits the check
@@ -24,8 +20,6 @@ splits:
   city: Splitsville
   state: GA
   zipcode: 12345
-  upvotes: 1
-  downvotes: 0
 
 reform:
   name: This restaurant doesn't split, but will
@@ -33,5 +27,3 @@ reform:
   city: Splitsville
   state: GA
   zipcode: 12345
-  upvotes: 0
-  downvotes: 1

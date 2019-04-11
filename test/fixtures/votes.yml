@@ -9,3 +9,13 @@ two:
   value: 1
   restaurant: two
   user: two
+
+three:
+  value: -1
+  restaurant: one
+  user: one
+
+four:
+  value: -1
+  restaurant: one
+  user: one

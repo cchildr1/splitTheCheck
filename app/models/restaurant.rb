@@ -15,4 +15,33 @@ class Restaurant < ApplicationRecord
     end
     return value
   end
+
+  def sum_upvotes
+    value = 0
+    self.votes.each do |vote|
+      if vote.value == 1
+        value += 1
+        end
+    end
+    value
+  end
+
+  def sum_downvotes
+    value = 0
+    self.votes.each do |vote|
+      if vote.value == -1
+        value += 1
+      end
+    end
+    value
+  end
+
+  def self.search(parameter)
+    if parameter
+      parameter = "%" + parameter + "%"
+      where("lower(name) LIKE :search OR lower(state) LIKE :search OR lower(city) LIKE :search OR lower(zipcode) LIKE :search", search: parameter)
+    else
+      all
+    end
+  end
 end

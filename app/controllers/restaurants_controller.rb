@@ -13,8 +13,10 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1.json
   def show
     restaurant = Restaurant.find(params[:id])
-    @votes = restaurant.votes.order(:created_at)
+    @votes = restaurant.votes.order(created_at: :desc)
     @value = restaurant.sum_votes
+    @upvotes = restaurant.sum_upvotes
+    @downvotes = restaurant.sum_downvotes
   end
 
   # GET /restaurants/new
@@ -70,8 +72,7 @@ class RestaurantsController < ApplicationController
     if params[:search].blank?
       redirect_to(restaurants_index_path, notice: "Empty Search Field") and return
     else
-      @parameter = "%" + params[:search].downcase + "%"
-      @results = Restaurant.all.where("lower(name) LIKE :search OR lower(state) LIKE :search OR lower(city) LIKE :search OR lower(zipcode) LIKE :search", search: @parameter)
+      @results = Restaurant.search(params[:search])
     end
   end
 

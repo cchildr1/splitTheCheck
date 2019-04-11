@@ -27,6 +27,16 @@
     </p>
 
     <p>
+      <strong>Upvotes: </strong>
+      <%= @upvotes %>
+    </p>
+
+    <p>
+      <strong>Downvotes: </strong>
+      <%= @downvotes %>
+    </p>
+
+    <p>
       <strong>Splits:</strong>
       <% if @value > 0 %>
         <%= image_tag("thumbsup.png", size: 64) %>
