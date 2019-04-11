@@ -2,20 +2,20 @@
 
 one:
   value: 1
-  restaurant: one
+  restaurant: two
   user: one
 
 two:
-  value: 1
+  value: -1
   restaurant: two
-  user: two
+  user: one
 
 three:
   value: -1
-  restaurant: one
+  restaurant: two
   user: one
 
 four:
   value: -1
-  restaurant: one
+  restaurant: reform
   user: one

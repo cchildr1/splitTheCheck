@@ -9,6 +9,7 @@ class RestaurantTest < ActiveSupport::TestCase
     @test.city = "town"
     @test.state = "GA"
     @test.zipcode = "31257"
+    @restaurant = restaurants(:two)
   end
 
   test "model can be created and valid" do
@@ -52,7 +53,23 @@ class RestaurantTest < ActiveSupport::TestCase
   end
 
   test "search returns proper result" do
+    searchList = Restaurant.search("test")
+    assert_includes searchList, @restaurant
+    assert_not_includes searchList, restaurants(:one)
+    assert_not_includes searchList, restaurants(:splits)
+    assert_not_includes searchList, restaurants(:reform)
+  end
 
+  test "sum votes returns proper result" do
+    assert_equal -1, @restaurant.sum_votes
+  end
+
+  test "sum upvotes returns proper result" do
+    assert_equal 1, @restaurant.sum_upvotes
+  end
+
+  test "sum downvotes returns proper result" do
+    assert_equal 2, @restaurant.sum_downvotes
   end
 
 end
