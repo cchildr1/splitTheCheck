@@ -39,9 +39,9 @@
     <p>
       <strong>Splits:</strong>
       <% if @value > 0 %>
-        <%= image_tag("thumbsup.png", size: 64) %>
+        <%= image_tag("thumbsup.png", size: 64, class: "splitst") %>
       <% elsif @value < 0 %>
-        <%= image_tag("thumbsdown.png", size: 64) %>
+        <%= image_tag("thumbsdown.png", size: 64, class: "splitsf") %>
       <% else %>
         ¯\_(ツ)_/¯
       <% end %>

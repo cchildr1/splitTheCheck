@@ -1,8 +1,10 @@
 require "application_system_test_case"
 
 class RestaurantsTest < ApplicationSystemTestCase
+  include Devise::Test::IntegrationHelpers
   setup do
     @restaurant = restaurants(:one)
+    @user = users(:one)
   end
 
   test "visiting the index" do
@@ -10,7 +12,18 @@ class RestaurantsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Restaurants"
   end
 
-  test "creating a Restaurant" do
+  test "logging in" do
+    visit restaurants_url
+    click_on "Login"
+    fill_in "user_email", with: @user.email
+    fill_in "user_password", with: "password"
+    click_on "Log in"
+    assert_selector "p", text: "Logged in as " + @user.email
+  end
+
+
+  test "creating a Restaurant after login" do
+    sign_in @user
     visit restaurants_url
     click_on "New Restaurant"
 
@@ -25,7 +38,8 @@ class RestaurantsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "updating a Restaurant" do
+  test "updating a Restaurant after login" do
+    sign_in @user
     visit restaurants_url
     click_on @restaurant.name.to_s, match: :first
     click_on "Edit"
@@ -62,16 +76,18 @@ class RestaurantsTest < ApplicationSystemTestCase
 
   test "upvoted restaurant changes from shrug to thumbs up" do
     restaurant = restaurants(:reform)
+    sign_in @user
     visit restaurants_url
     click_on restaurant.name.to_s, match: :first
-    click_on "Vote"
+    click_on "Upvote"
     assert_text restaurant.name.to_s + " upvoted"
     assert_text "¯\\_(ツ)_/¯"
-    click_on "Vote"
+    click_on "Upvote"
     assert page.has_css?('.splitst')
   end
 
   test "downvoted restaurant changes from shrug to thumbs down" do
+    sign_in @user
     restaurant = restaurants(:splits)
     visit restaurants_url
     click_on restaurant.name.to_s, match: :first

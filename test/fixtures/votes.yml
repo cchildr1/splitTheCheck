@@ -19,3 +19,18 @@ four:
   value: -1
   restaurant: reform
   user: one
+
+five:
+  value: 1
+  restaurant: splits
+  user: one
+
+six:
+  value: 1
+  restaurant: one
+  user: one
+
+seven:
+  value: -1
+  restaurant: one
+  user: one
