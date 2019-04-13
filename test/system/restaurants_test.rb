@@ -113,4 +113,15 @@ class RestaurantsTest < ApplicationSystemTestCase
     assert_no_text restaurants(:one).name.to_s
   end
 
+  test "can sign up a new user" do
+    visit restaurants_url
+    click_on "Sign up"
+    fill_in "Email", with: "test@notest.com"
+    fill_in "Password", with: "testing"
+    fill_in "Password confirmation", with: "testing"
+    click_button "Sign up"
+    assert_text "Welcome! You have signed up successfully."
+    assert_text "Logged in as test@notest.com."
+  end
+
 end
