@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce7907c8-b8a2-4953-8af5-20b5e5cac3e9" name="Default Changelist" comment="added comments.csv and comments to seed">
+    <list default="true" id="ce7907c8-b8a2-4953-8af5-20b5e5cac3e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/test.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/test.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/comment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/comment.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20190415221731_create_comments.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190415221731_create_comments.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +28,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/restaurants/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="37" column="120" selection-start-line="37" selection-start-column="120" selection-end-line="37" selection-end-column="120" />
+            <state relative-caret-position="300">
+              <caret line="20" column="30" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="20" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/comment.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/restaurant.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20190415221731_create_comments.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/restaurants_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -89,14 +123,16 @@
         <option value="$PROJECT_DIR$/test/fixtures/users.yml.erb" />
         <option value="$PROJECT_DIR$/test/models/restaurant_test.rb" />
         <option value="$PROJECT_DIR$/test/models/vote_test.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/restaurants_controller.rb" />
         <option value="$PROJECT_DIR$/test/controllers/restaurants_controller_test.rb" />
-        <option value="$PROJECT_DIR$/app/views/restaurants/show.html.erb" />
         <option value="$PROJECT_DIR$/test/fixtures/votes.yml" />
         <option value="$PROJECT_DIR$/test/system/restaurants_test.rb" />
-        <option value="$PROJECT_DIR$/app/models/restaurant.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
+        <option value="$PROJECT_DIR$/app/models/restaurant.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/restaurants_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/restaurants/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/comment.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20190415221731_create_comments.rb" />
       </list>
     </option>
   </component>
@@ -159,17 +195,6 @@
               <item name="splitthecheck" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
               <item name="migrate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="splitthecheck" type="b2602c69:ProjectViewProjectNode" />
-              <item name="splitthecheck" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="splitthecheck" type="b2602c69:ProjectViewProjectNode" />
-              <item name="splitthecheck" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="splitthecheck" type="b2602c69:ProjectViewProjectNode" />
@@ -315,7 +340,7 @@
       <workItem from="1555077183527" duration="1207000" />
       <workItem from="1555115343754" duration="2606000" />
       <workItem from="1555119509300" duration="722000" />
-      <workItem from="1555365889663" duration="1346000" />
+      <workItem from="1555365889663" duration="2991000" />
     </task>
     <task id="LOCAL-00001" summary="generated scaffold for restaurant containing name, street address, city, state, zip, upvotes and downvotes">
       <created>1553297671726</created>
@@ -611,11 +636,25 @@
       <option name="project" value="LOCAL" />
       <updated>1555367089860</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="corrected seed file, ran db:reset">
+      <created>1555367286392</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1555367286392</updated>
+    </task>
+    <task id="LOCAL-00044" summary="added comments table to show page">
+      <created>1555368081540</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1555368081540</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68256000" />
+    <option name="totallyTimeSpent" value="69901000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -630,7 +669,7 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.1610404" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.1610404" />
       <window_info id="Structure" order="1" sideWeight="0.5032258" side_tool="true" weight="0.25449872" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -642,10 +681,10 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.26241902" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.26241902" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.29697624" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.29697624" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24958494" />
@@ -718,8 +757,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="search function completed" />
-    <MESSAGE value="Added % to like operator" />
     <MESSAGE value="added chrome_helper and controller test for search." />
     <MESSAGE value="minor changes to forms, added classes to images for testing, wrote system tests to verify that images change appropriately when upvoted and downvoted." />
     <MESSAGE value="added test for downvoting" />
@@ -743,7 +780,9 @@
     <MESSAGE value="more system test updates" />
     <MESSAGE value="added migration for comments, added has_many comments to user and restaurants" />
     <MESSAGE value="added comments.csv and comments to seed" />
-    <option name="LAST_COMMIT_MESSAGE" value="added comments.csv and comments to seed" />
+    <MESSAGE value="corrected seed file, ran db:reset" />
+    <MESSAGE value="added comments table to show page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added comments table to show page" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -818,20 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/restaurants/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/restaurants/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -931,20 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/restaurants_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/restaurants/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/fixtures/restaurants.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -994,16 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/comment.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/restaurant.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1017,13 +1018,59 @@
       </provider>
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190415221731_create_comments.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
+        <state relative-caret-position="499">
           <caret line="37" column="120" selection-start-line="37" selection-start-column="120" selection-end-line="37" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/restaurants_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/restaurants/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/restaurants/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="58" lean-forward="true" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/restaurants/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/comment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/restaurant.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190415221731_create_comments.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
         </state>
       </provider>
     </entry>
