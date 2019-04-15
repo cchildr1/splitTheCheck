@@ -6,6 +6,7 @@ class Restaurant < ApplicationRecord
   validates :zipcode, presence: true, format: { with: /\d{5}/, message: "Zip Code must contain 5 numbers" }
 
   has_many :votes
+  has_many :comments
 
   def sum_votes
     votes = self.votes
