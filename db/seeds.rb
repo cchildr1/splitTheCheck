@@ -35,7 +35,7 @@ end
 
 Vote.delete_all
 500.times do
-  Vote.create(value: randomvalue, restaurant_id: rand(Restaurant.all.size), user_id: rand(User.all.size))
+  Vote.create(value: randomvalue, restaurant_id: rand(Restaurant.all.size - 1) + 1, user_id: rand(User.all.size - 1) + 1)
 end
 
 Comment.delete_all
@@ -44,8 +44,8 @@ csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
   comment = Comment.new
   comment.content = row.to_hash["content"]
-  comment.user_id = rand(User.all.size)
-  comment.restaurant = rand(Restaurant.all.size)
+  comment.user_id = rand(User.all.size - 1) + 1
+  comment.restaurant_id = rand(Restaurant.all.size - 1) + 1
   comment.save!
 end
 
