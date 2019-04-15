@@ -17,6 +17,7 @@ class RestaurantsController < ApplicationController
     @value = restaurant.sum_votes
     @upvotes = restaurant.sum_upvotes
     @downvotes = restaurant.sum_downvotes
+    @comments = restaurant.get_comments
   end
 
   # GET /restaurants/new

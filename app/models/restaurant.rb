@@ -45,4 +45,8 @@ class Restaurant < ApplicationRecord
       all
     end
   end
+
+  def get_comments
+    self.comments
+  end
 end

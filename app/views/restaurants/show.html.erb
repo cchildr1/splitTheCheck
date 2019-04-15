@@ -46,33 +46,61 @@
         ¯\_(ツ)_/¯
       <% end %>
     </p>
+
     <div class="row">
       <div class="col-md-2"></div>
-      <table class="col-md-8">
-        <thead>
-        <tr>
-          <th>User</th>
-          <th>Created At:</th>
-          <th>Splits?</th>
-        </tr>
-        </thead>
-
-
-        <tbody>
-        <% @votes.each do |vote| %>
+      <div class="col-md-8">
+        <table>
+          <thead>
           <tr>
-            <td><%= vote.user.email %></td>
-            <td><%= vote.created_at %></td>
-            <td><% if vote.value == 1 %>
-                  <%= image_tag("thumbsup.png", size: 16) %>
-                <% elsif vote.value == -1 %>
-                  <%= image_tag("thumbsdown.png", size: 16) %>
-                <% end %>
-            </td>
+            <th>Comment</th>
+            <th>User</th>
+            <th>Created at</th>
           </tr>
-        <% end %>
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            <% @comments.each do |comment| %>
+                <tr>
+                  <td><%= comment.content %></td>
+                  <td><%= comment.user.email %></td>
+                  <td><%= comment.created_at %></td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <table>
+          <thead>
+          <tr>
+            <th>User</th>
+            <th>Created At:</th>
+            <th>Splits?</th>
+          </tr>
+          </thead>
+
+
+          <tbody>
+          <% @votes.each do |vote| %>
+            <tr>
+              <td><%= vote.user.email %></td>
+              <td><%= vote.created_at %></td>
+              <td><% if vote.value == 1 %>
+                    <%= image_tag("thumbsup.png", size: 16) %>
+                  <% elsif vote.value == -1 %>
+                    <%= image_tag("thumbsdown.png", size: 16) %>
+                  <% end %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
       <div class="col-md-2"></div>
     </div>
 
