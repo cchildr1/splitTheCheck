@@ -38,5 +38,16 @@ Vote.delete_all
   Vote.create(value: randomvalue, restaurant_id: rand(Restaurant.all.size), user_id: rand(User.all.size))
 end
 
+Comment.delete_all
+csv_text = File.read(Rails.root.join('lib', 'data', 'comments.csv'))
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  comment = Comment.new
+  comment.content = row.to_hash["content"]
+  comment.user_id = rand(User.all.size)
+  comment.restaurant = rand(Restaurant.all.size)
+  comment.save!
+end
+
 
 
