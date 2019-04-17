@@ -47,6 +47,17 @@
       <% end %>
     </p>
 
+    <% if user_signed_in? %>
+    <p>
+      <strong>Favorite: </strong>
+      <% if current_user.favorites.exists?(restaurant_id: @restaurant.id) %>
+        YES! <%= link_to 'Remove from favorites', favorite_path(restaurant_id: @restaurant.id, user_id: current_user.id), method: :delete %>
+      <% else %>
+        <%= link_to 'Add to favorites', favorite_index_path(@restaurant), method: :post %>
+      <% end %>
+    </p>
+    <% end %>
+
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">
