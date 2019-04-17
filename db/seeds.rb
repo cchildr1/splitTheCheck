@@ -49,5 +49,13 @@ csv.each do |row|
   comment.save!
 end
 
+Favorite.delete_all
+40.times do
+  favorite = Favorite.new
+  favorite.user_id = rand(User.all.size - 1) + 1
+  favorite.restaurant_id = rand(Restaurant.all.size - 1) + 1
+  favorite.save!
+end
+
 
 
