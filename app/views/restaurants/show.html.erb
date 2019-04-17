@@ -72,6 +72,14 @@
       </div>
       <div class="col-md-2"></div>
     </div>
+    <div class="row"><div class="col-md-2"></div>
+      <div class=""col-md-8">
+      <% if user_signed_in? %>
+        <%= render 'comments/form' %>
+      <% end %>
+    </div>
+    <div class="col-md-2"></div>
+    </div>
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">

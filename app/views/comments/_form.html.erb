@@ -1,0 +1,9 @@
+<%= form_for ([@restaurant, @restaurant.comments.build]) do |f| %>
+  <%= f.text_field :user_id, value: current_user.id, hidden: true %>
+  <p>
+    <%= f.label :content, "Comment"%><br>
+    <%= f.text_area :content %>
+  </p>
+  <br>
+  <p><%= f.submit %></p>
+<% end %>
