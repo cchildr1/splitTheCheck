@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :favorite, only: [:create, :destroy]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/upvote/:id", to: "restaurants#upvote", as: "restaurants_upvote"
   get "/downvote/:id", to: "restaurants#downvote", as: "restaurants_downvote"
   get '/search', to: 'restaurants#search', as: 'search_page'
+  get 'users/:id', to: 'users#show', as: 'user_profile'
 end
