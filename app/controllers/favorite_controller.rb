@@ -1,5 +1,6 @@
 class FavoriteController < ApplicationController
   before_action :set_restaurant
+  before_action :authenticate_user!
 
   def create
     if Favorite.create(restaurant_id: @restaurant.id, user: current_user)
