@@ -60,12 +60,12 @@ class RestaurantsController < ApplicationController
   end
 
   def upvote
-    Vote.create(value: 1, restaurant_id: params[:id], user_id: current_user.id.to_int)
+    @restaurant.upvote(current_user.id)
     redirect_to @restaurant, notice: "#{@restaurant.name} upvoted"
   end
 
   def downvote
-    Vote.create(value: -1, restaurant_id: params[:id], user_id: current_user.id.to_int)
+    @restaurant.downvote(current_user.id)
     redirect_to @restaurant, notice: "#{@restaurant.name} downvoted"
   end
 

@@ -10,6 +10,7 @@ class RestaurantTest < ActiveSupport::TestCase
     @test.state = "GA"
     @test.zipcode = "31257"
     @restaurant = restaurants(:two)
+    @user = users(:one)
   end
 
   test "model can be created and valid" do
@@ -70,6 +71,18 @@ class RestaurantTest < ActiveSupport::TestCase
 
   test "sum downvotes returns proper result" do
     assert_equal 2, @restaurant.sum_downvotes
+  end
+
+  test "upvote adds a positive vote" do
+    assert_difference "Vote.count" do
+      @restaurant.upvote(@user.id)
+    end
+  end
+
+  test "downvote adds a vote" do
+    assert_difference "Vote.count" do
+      @restaurant.downvote(@user.id)
+    end
   end
 
 end

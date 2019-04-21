@@ -49,4 +49,12 @@ class Restaurant < ApplicationRecord
   def get_comments
     self.comments
   end
+
+  def upvote(user_id)
+    self.votes.create(value: 1, user_id: user_id)
+  end
+
+  def downvote(user_id)
+    self.votes.create(value: -1, user_id: user_id)
+  end
 end
