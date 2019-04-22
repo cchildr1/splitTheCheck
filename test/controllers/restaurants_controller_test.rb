@@ -99,4 +99,6 @@ class RestaurantsControllerTest < ActionDispatch::IntegrationTest
     get restaurants_downvote_url(@restaurant)
     assert_redirected_to new_user_session_url
   end
+
+
 end
