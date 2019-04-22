@@ -57,4 +57,8 @@ class Restaurant < ApplicationRecord
   def downvote(user_id)
     self.votes.create(value: -1, user_id: user_id)
   end
+
+  def comment(id, content)
+    self.comments.create(user_id: id, content: content)
+  end
 end

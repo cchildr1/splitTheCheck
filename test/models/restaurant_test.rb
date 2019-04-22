@@ -85,4 +85,10 @@ class RestaurantTest < ActiveSupport::TestCase
     end
   end
 
+  test "comment adds a comment" do
+    assert_difference "Comment.count" do
+      @restaurant.comment(@user.id, "comment")
+    end
+  end
+
 end
