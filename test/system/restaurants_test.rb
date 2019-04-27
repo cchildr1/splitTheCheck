@@ -150,4 +150,13 @@ class RestaurantsTest < ApplicationSystemTestCase
     click_on "Remove from favorites"
     assert_text "Restaurant no longer in favorites"
   end
+
+  test "user profile page" do
+    sign_in @user
+    visit restaurants_url
+    click_on "User Profile"
+    assert_text @restaurant.name
+    assert_text "Your Comments"
+    assert_text "Your Votes"
+  end
 end
