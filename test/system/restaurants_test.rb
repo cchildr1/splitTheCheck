@@ -124,4 +124,30 @@ class RestaurantsTest < ApplicationSystemTestCase
     assert_text "Logged in as test@notest.com."
   end
 
+  test "Add a comment" do
+    sign_in @user
+    visit restaurants_url
+    click_on @restaurant.name
+    fill_in "comment_content", with: "This is a comment"
+    click_on "Create Comment"
+    assert_text "This is a comment"
+  end
+
+  test "Favorite a restaurant" do
+    sign_in @user
+    visit restaurants_url
+    click_on @restaurant.name
+    click_on "Add to favorites"
+    assert_text "Restaurant has been favorited"
+  end
+
+  test "unfavorite a restaurant" do
+    sign_in @user
+    visit restaurants_url
+    click_on @restaurant.name
+    click_on "Add to favorites"
+    assert_text "Restaurant has been favorited"
+    click_on "Remove from favorites"
+    assert_text "Restaurant no longer in favorites"
+  end
 end

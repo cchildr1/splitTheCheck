@@ -7,5 +7,5 @@ one:
 
 two:
   content: MyString
-  user: two
+  user: one
   restaurant: two
